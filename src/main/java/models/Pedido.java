@@ -4,6 +4,7 @@ public class Pedido {
 
 	// Atributos relativos ao produto e ao frete
 	
+	private double valorTotal;
 	private double valorProduto;
 	private double valorFrete;
 	
@@ -56,6 +57,12 @@ public class Pedido {
 	
 	// Getters e Setters
 	
+	public double getValorTotal() {
+		return valorTotal;
+	}
+	public void setValorTotal(double valorTotal) {
+		this.valorTotal = valorTotal;
+	}
 	public double getValorProduto() {
 		return valorProduto;
 	}

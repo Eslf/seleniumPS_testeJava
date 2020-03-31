@@ -36,6 +36,14 @@ public class Step_mapping {
    
    @When ("Ao clicar no botao de adicionar ao carrinho")
    public void addToCart_itemPage_button() {
+	   String valorProd = driver.findElement(By.cssSelector("#our_price_display")).getText();
+	   System.out.println("ValorProd: "+valorProd);
+	   valorProd = valorProd.substring(1);
+	   double valorProdD = Double.parseDouble(valorProd);
+	   pedido.setValorProduto(valorProdD);
+	   System.out.println("--------------\n");
+	   System.out.println("Valor do Produto: "+pedido.getValorProduto());
+	   System.out.println("\n--------------\n");
 	   driver.findElement(By.cssSelector("#add_to_cart")).click();
    }
    
@@ -52,6 +60,13 @@ public class Step_mapping {
    @Then ("O site abre a pagina do carrinho de compras")
    public void checkoutPage_validation() {
 	   assertThat(driver.findElement(By.cssSelector("#cart_title")).getText(), is ("SHOPPING-CART SUMMARY\nYour shopping cart contains: 1 Product"));
+	   String valorFrete = driver.findElement(By.cssSelector("#total_shipping")).getText();
+	   valorFrete = valorFrete.substring(1);
+	   double valorFreteD = Double.parseDouble(valorFrete);
+	   pedido.setValorFrete(valorFreteD);
+	   System.out.println("--------------\n");
+	   System.out.println("Valor do Frete: "+pedido.getValorFrete());
+	   System.out.println("\n--------------\n");
 	   driver.findElement(By.xpath("/html/body/div/div[2]/div/div[3]/div/p[2]/a[1]/span")).click();
    }
 
