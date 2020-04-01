@@ -73,7 +73,7 @@ public class Step_mapping {
    
    @And ("E clicar no botao para o resumo da compra")
    public void checkout_itemPage_button() {
-	   WebDriverWait wait_checkoutButton = new WebDriverWait(driver, 1);
+	   WebDriverWait wait_checkoutButton = new WebDriverWait(driver, 2);
 	   wait_checkoutButton.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/div/div[1]/header/div[3]/div/div/div[4]/div[1]/div[2]/div[4]/a/span")));
 	   driver.findElement(By.xpath("/html/body/div/div[1]/header/div[3]/div/div/div[4]/div[1]/div[2]/div[4]/a/span")).click();
    }
@@ -159,6 +159,7 @@ public class Step_mapping {
    @Then ("Validar se a compra foi finalizada com sucesso")
    public void validateOrderPaymentPage_text() {
 	   assertThat(driver.findElement(By.xpath("/html/body/div/div[2]/div/div[3]/div/div/p/strong")).getText(), is("Your order on My Store is complete."));
+	   driver.close();
    }
    
 }
