@@ -21,7 +21,6 @@ public class Pedido {
 	private String cidade;
 	private String cep;
 	private String estado;
-	private String pais;
 	private String aliasEndereco;
 	
 	// Construtores
@@ -38,7 +37,7 @@ public class Pedido {
 	}
 	
 	public Pedido(double valorProduto, double valorFrete, String nome, String sobrenome, String email, String senha,
-			String telefone, String rua, String cidade, String cep, String estado, String pais, String aliasEndereco) {
+			String telefone, String rua, String cidade, String cep, String estado, String aliasEndereco) {
 		super();
 		this.valorProduto = valorProduto;
 		this.valorFrete = valorFrete;
@@ -51,7 +50,6 @@ public class Pedido {
 		this.cidade = cidade;
 		this.cep = cep;
 		this.estado = estado;
-		this.pais = pais;
 		this.aliasEndereco = aliasEndereco;
 	}
 	
@@ -128,12 +126,6 @@ public class Pedido {
 	}
 	public void setEstado(String estado) {
 		this.estado = estado;
-	}
-	public String getPais() {
-		return pais;
-	}
-	public void setPais(String pais) {
-		this.pais = pais;
 	}
 	public String getAliasEndereco() {
 		return aliasEndereco;
